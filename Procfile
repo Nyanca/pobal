@@ -1,0 +1,1 @@
+echo web: gunicorn pobal.wsgi:application > Procfile
