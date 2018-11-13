@@ -13,9 +13,14 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import dj_database_url
 
+# set debug value for the development environment
+if os.environ.get('DEVELOPMENT'):
+    development = True
+else:
+    development = False
+    
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -24,13 +29,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*!ce(#k&0*_pg-!q0*@48%*nn3naf5e=wc*m9546w3!@#^etay'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = development
 
 ALLOWED_HOSTS = [
-    'pobal-nianca.c9users.io',
-    'pobal-app.herokuapp.com',
+    os.environ.get('C9_HOSTNAME'),
+    os.environ.get('HOSTNAME'),
 ]
 
+host = os.environ.get('SITE_HOST')
+if host:
+    ALLOWED_HOSTS.append(host)
 
 # Application definition
 
@@ -86,7 +94,19 @@ WSGI_APPLICATION = 'pobal.wsgi.application'
 #         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-DATABASES = {'default':dj_database_url.parse('postgres://qgaqeztvarguuk:e864334ff24fa225f284ed63c84c85d9eb5766b7c11e00ec5d868effb9bb0d1b@ec2-54-75-242-47.eu-west-1.compute.amazonaws.com:5432/ddncq466ped7no')}
+# DATABASES = {'default':dj_database_url.parse('DATABASE_URL')}
+
+if development:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+    # print("Postgres URL not found, using sqlite instead")
+else:
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}  
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
