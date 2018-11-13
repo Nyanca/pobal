@@ -1,3 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Poppins");
+.font-color {
+  color: #FDFAF5; }
 
+.background-orange {
+  background-color: linear-gradient(to bottom right, red, yellow); }
+
+.sitefont {
+  font-family: "M PLUS Rounded 1c", sans-serif; }
+
+.brandfont {
+  font-family: "Poppins", sans-serif; }
+
+.left {
+  float: left;
+  padding-left: 10px; }
+
+.right {
+  float: right;
+  padding-right: 10px; }
+
+.center-text {
+  text-align: center; }
+
+.spacer {
+  padding: 5px; }
+
+.half-width {
+  width: 50%; }
+
+.medium-padding-top {
+  margin: 50px; }
+
+.light-padding-top {
+  padding-top: 20px; }
 
 /*# sourceMappingURL=main.css.map */
