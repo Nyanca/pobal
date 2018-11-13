@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Poppins');
+
+// choice fonts
+$pobalfont: 'Poppins', sans-serif;
+$sitefont:'M PLUS Rounded 1c', sans-serif;
+
+// colours
+%font-color{
+  color: #FDFAF5;  
+}
+
+//backgrounds
+%background-gradient-orange{
+    background-color:linear-gradient(to bottom right, red, yellow);
+}
