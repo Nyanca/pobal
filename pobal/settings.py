@@ -26,7 +26,10 @@ SECRET_KEY = '*!ce(#k&0*_pg-!q0*@48%*nn3naf5e=wc*m9546w3!@#^etay'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pobal-nianca.c9users.io']
+ALLOWED_HOSTS = [
+    'pobal-nianca.c9users.io',
+    'pobal-app.herokuapp.com',
+]
 
 
 # Application definition
