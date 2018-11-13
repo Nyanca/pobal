@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.utils import timezone
 
-# Create your views here.
+def pobal_studio(request):
+    # a view to render the pobal studio dashboard
+    return render(request, 'pobal-studio.html')
