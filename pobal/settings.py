@@ -96,17 +96,29 @@ WSGI_APPLICATION = 'pobal.wsgi.application'
 #     }
 # }
 
-if development:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-    # print("Postgres URL not found, using sqlite instead")
-else:
-    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}  
+# if development:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
+#     # print("Postgres URL not found, using sqlite instead")
+# else:
+#     DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}  
 
+if development:
+    if "DATABASE_URL" in os.environ:    
+        DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))} 
+     
+    else:      
+        print("Postgres URL not found, using sqlite instead")     
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
