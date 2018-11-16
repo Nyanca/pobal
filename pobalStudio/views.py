@@ -29,8 +29,7 @@ def new_ticket(request):
             summary = data['summary']
             detail = data['detail']
             image = data['image']
-            # date = data['date']
-            
+
             form_data = Ticket(title=title, summary=summary, detail=detail, image=image)
             form_data.save()
         
@@ -39,7 +38,7 @@ def new_ticket(request):
 
 def get_all_tickets(request):
     # a view to get all tickets saved to the DB
-    all_tickets = Ticket.objects.filter(published_date__lte=timezone.now
+    all_tickets = Ticket.objects.filter(date__lte=timezone.now
     ()).order_by('-date')
     
     return render(request, 'all_tickets.html', {'all_tickets':all_tickets})

@@ -1,26 +1,29 @@
-{% extends 'base_lab.html' %}
-{% block content %}
+{% extends 'base_lab.html' %} {% block content %} {% for ticket in all_tickets %}
 
-<div class='row sitefont fieldWrapper background-ticket'>
-    <div class="col s12 m12 l12 xl12">
-        <div class="row">
-            <div class="col s2 m3 l3 xl3">
-                <img src="{{ image }}">
-            </div>
-            <div class="col s8 m6 l6 xl6">
-                <h4>{{ title }}</h4>
-                <h6>{{ description }}</h6>
-            </div>
-            <div class="col s2 m3 l3 xl3">
-                {#<p>{{ date }}</p>#}
-            </div>
-        </div>
-        <div class="row">
+<div class="row container-light">
+    <div class="col s12 m8 l6 xl6">
+        <div class='row sitefont fieldWrapper background-ticket ticket-style'>
             <div class="col s12 m12 l12 xl12">
-                <p>{{ detail }}</p>
+                <div class="row">
+                    <div class="col s2 m3 l3 xl3">
+                        <img src="{{ ticket.image }}">
+                    </div>
+                    <div class="col s8 m6 l6 xl6">
+                        <h5>{{ ticket.title }}</h5>
+                        <h6>{{ ticket.description }}</h6>
+                    </div>
+                    <div class="col s2 m3 l3 xl3">
+                        <p>{{ ticket.date }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m12 l12 xl12">
+                        <p>{{ ticket.detail }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-{% endblock %}
+{% endfor %} {% endblock %}

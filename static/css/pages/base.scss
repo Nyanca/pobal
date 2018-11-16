@@ -1,4 +1,4 @@
-// fonts
+//----------------------------fonts
 .sitefont{
     font-family: $sitefont;
 }
@@ -7,9 +7,17 @@
     font-family: $pobalfont;
 }
 
-// colours
+//----------------------------colours
 .font-color{
     @extend %font-color;
+}
+
+.sitecolour1{
+    color: $sitecolour1;
+}
+
+.sitecolour2{
+    color: $sitecolour2;
 }
 
 .background-orange{
@@ -20,7 +28,7 @@
     @extend %background-ticket;
 }
 
-//alignment, padding & margins
+//----------------------------alignment, padding & margins
 .left {
     float: left;
     padding-left: 10px;
@@ -55,7 +63,12 @@
     padding:20px;
 }
 
-// sticky footer styles
+//----------------------------special styles
+.ticket-style{
+    @extend %ticket-style;
+}
+
+//----------------------------sticky footer styles
 html,
 body {
     height: 100%;

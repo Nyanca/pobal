@@ -1,21 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Poppins');
 
-// choice fonts
+//----------------------------choice fonts
 $pobalfont: 'Poppins', sans-serif;
 $sitefont:'M PLUS Rounded 1c', sans-serif;
 
-// colours
+//----------------------------colors
+$sitecolour1: #ff7f50;
+$sitecolour2: #ffa500;
+
+//--------------------------------------placholder variables
+//----------------------------colours
 %font-color{
   color: #FDFAF5;  
 }
 
-//backgrounds
+//----------------------------backgrounds
 %background-gradient-orange{
     background:linear-gradient(to bottom right, #ff7f50, #ffa500);
 }
 
 %background-ticket{
   background-color:#F7EBE1;
+}
+
+//----------------------------special styles
+%ticket-style{
   padding: 10px;
+  border-style: groove;
+  border-color:#FDFAF5;
+  background-image: url('static/img/moonSun.svg');
 }

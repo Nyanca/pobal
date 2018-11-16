@@ -7,14 +7,25 @@
   background: linear-gradient(to bottom right, #ff7f50, #ffa500); }
 
 .background-ticket {
-  background-color: #F7EBE1;
-  padding: 10px; }
+  background-color: #F7EBE1; }
+
+.ticket-style {
+  padding: 10px;
+  border-style: groove;
+  border-color: #FDFAF5;
+  background-image: url("static/img/moonSun.svg"); }
 
 .sitefont {
   font-family: "M PLUS Rounded 1c", sans-serif; }
 
 .brandfont {
   font-family: "Poppins", sans-serif; }
+
+.sitecolour1 {
+  color: #ff7f50; }
+
+.sitecolour2 {
+  color: #ffa500; }
 
 .left {
   float: left;

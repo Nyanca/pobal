@@ -6,7 +6,7 @@ class Ticket(models.Model):
     summary = models.CharField(max_length=100, blank=False)
     detail = models.TextField()
     image = models.ImageField(upload_to='img', blank=True, null=True,
-    default='media/img/star.png')
+    default='img/star.png')
     date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     
     def __str__(self):
