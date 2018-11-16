@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, render_to_response
+from django.http import HttpResponseRedirect
 from django.utils import timezone
 
 from .models import Ticket
@@ -18,19 +19,21 @@ def ticket_form(request):
     
 def new_ticket(request):
     # a view to manage the create ticket form
-    
     if request.method=='POST':
-        ticketForm = CreateTicketForm(request.POST)
+        ticketForm = CreateTicketForm(request.POST, request.FILES)
+
         if ticketForm.is_valid():
-            title = request.form.get('title')
-            summary = request.form.get('summary')
-            detail = request.form.get('detail')
-            image = request.form.get('image')
-            date = request.form.get('date')
-    
-    else: 
-        ticketForm = CreateTicketForm()
-    
-    args = {'ticketForm':ticketForm, 'title':title, 'summary':summary, 'detail':detail, 'image':image, 'date':date} 
-    
-    return render(request, 'pobal-studio.html', args)
+            data = ticketForm.cleaned_data
+            
+            title = data['title']
+            summary = data['summary']
+            detail = data['detail']
+            image = data['image']
+            # date = data['date']
+            
+            form_data = Ticket(title=title, summary=summary, detail=detail, image=image)
+            form_data.save()
+        
+        args = {'title':title, 'summary':summary, 'detail':detail, 'image':image}
+        return render(request, 'all_tickets.html', args)
+        

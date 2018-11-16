@@ -16,6 +16,10 @@
     @extend %background-gradient-orange;
 }
 
+.background-ticket{
+    @extend %background-ticket;
+}
+
 //alignment, padding & margins
 .left {
     float: left;
@@ -45,6 +49,10 @@
 
 .light-padding-top {
     padding-top: 20px;
+}
+
+.container-light{
+    padding:20px;
 }
 
 // sticky footer styles

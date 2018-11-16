@@ -12,5 +12,10 @@ $sitefont:'M PLUS Rounded 1c', sans-serif;
 
 //backgrounds
 %background-gradient-orange{
-    background-color:linear-gradient(to bottom right, red, yellow);
+    background:linear-gradient(to bottom right, #ff7f50, #ffa500);
+}
+
+%background-ticket{
+  background-color:#F7EBE1;
+  padding: 10px;
 }
