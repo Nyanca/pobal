@@ -1,12 +1,13 @@
 {% extends 'base_lab.html' %}
 {% load bootstrap_tags %}
 {% block content %}
-<form method='POST' action='{% url "new_ticket" %}' enctype="multipart/form-data">
+
+<form method='POST' enctype="multipart/form-data">
     <fieldset class='form-group'>
         <legend>Create a Ticket</legend>
         {% csrf_token %}
             {{ ticketForm | as_bootstrap }}
-        <button type="submit" class="btn btn-primary">Create Ticket</button>
+        <button type="submit" class="btn btn-primary">Save</button>
     </fieldset>
     
 </form>
