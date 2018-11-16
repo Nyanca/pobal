@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 @import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Poppins");
-.font-color {
+.font-color i {
+  color: #FDFAF5; }
+
+.icon i {
+  padding: 5px;
   color: #FDFAF5; }
 
 .background-orange {
@@ -10,10 +14,10 @@
   background-color: #F7EBE1; }
 
 .ticket-style {
-  padding: 10px;
-  border-style: groove;
-  border-color: #FDFAF5;
-  background-image: url("static/img/moonSun.svg"); }
+  padding: 20px;
+  border-style: solid;
+  border-color: #CE5519;
+  background-image: url("/static/img/paperlinen.jpeg"); }
 
 .sitefont {
   font-family: "M PLUS Rounded 1c", sans-serif; }

@@ -1,0 +1,53 @@
+{% extends 'base_lab.html' %} {% block content %}
+
+<div class="row container center">
+    <div class="col s12 m8 l6 xl6">
+        <div class='row sitefont fieldWrapper background-ticket ticket-style'>
+            <div class="col s12 m12 l12 xl12">
+                <div class="row">
+                    <div class="col s2 m3 l3 xl3">
+                        {% if ticket.image %}
+                        <img src="/media/{{ ticket.image }}">
+                        {% endif %}
+                    </div>
+                    <div class="col s8 m6 l6 xl6">
+                        <h5>{{ ticket.title }}</h5>
+                        <h6>{{ ticket.description }}</h6>
+                    </div>
+                    <div class="col s2 m3 l3 xl3">
+                        <p>{{ ticket.date }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m12 l12 xl12">
+                        <p>{{ ticket.detail }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row icon">
+            <div class="col s3 m3 l3 xl3">
+                <i class="far fa-comment-dots"></i>
+                <p>Comment</p>
+            </div>
+            <div class="col s3 m3 l3 xl3">
+                <i class="far fa-eye"></i>
+                <p>{{ticket.views}}</p>
+            </div>
+            <div class="col s3 m3 l3 xl3">
+                <i class="far fa-star"></i>
+                <p>Like</p>
+            </div>
+            <div class="col s3 m3 l3 xl3">
+                <i class="far fa-money-bill-alt"></i>
+                <p>Buy Ticket</p>
+            </div>
+            <div class="col s3 m3 l3 xl3">
+                <i class="far fa-money-bill-alt"></i>
+                <a href="{% url 'edit_ticket' ticket.id %}" class="btn btn-default">Edit Ticket</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

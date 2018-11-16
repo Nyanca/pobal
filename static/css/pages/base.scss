@@ -7,6 +7,10 @@
     font-family: $pobalfont;
 }
 
+//----------------------------icons
+.icon i{
+    @extend %icon;
+}
 //----------------------------colours
 .font-color{
     @extend %font-color;
