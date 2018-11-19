@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from products.models import Ticket
+from pobalStudio.models import Ticket
 
 def cart_contents(request):
     # a cart view to render a shopping cart throughout the Pobal app
