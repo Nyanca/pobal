@@ -52,16 +52,19 @@ def ticket_detail(request, pk):
     return render(request, 'ticket_detail.html', {'ticket':ticket})
 
 def add_comment(request, pk):
+    # a view to deal with data from the user comment form
     ticket = get_object_or_404(Ticket, pk=pk)
-
+    
+    # get the POST data input from form
     if request.method == 'POST':
-        form = CommentForm(request.Post)
+        form = CommentForm(request.POST)
         
+        # check that the form is valid, save the form if valid and return the correct ticket with new user comment
         if form.is_valid():
             comment = form.save(commit=False)
             comment.ticket = ticket
             comment.save()
-            return redirect(request, 'ticket_detail', pk=ticket.pk)
+            return redirect('ticket_detail', pk=ticket.pk)
     
     else:
         form = CommentForm()
