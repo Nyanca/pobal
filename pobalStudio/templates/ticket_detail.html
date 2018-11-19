@@ -7,8 +7,7 @@
                 <div class="row">
                     <div class="col s2 m3 l3 xl3">
                         {% if ticket.image %}
-                        <img src="/media/{{ ticket.image }}">
-                        {% endif %}
+                        <img src="/media/{{ ticket.image }}"> {% endif %}
                     </div>
                     <div class="col s8 m6 l6 xl6">
                         <h5>{{ ticket.title }}</h5>
@@ -28,7 +27,14 @@
         <div class="row icon">
             <div class="col s3 m3 l3 xl3">
                 <i class="far fa-comment-dots"></i>
-                <p>Comment</p>
+                <a class="btn btn-default" href="{% url 'add_comment' pk=ticket.pk %}">Comment</a>
+                <hr> {% for comment in tickets.comments.all %}
+                <div class="comment">
+                    <div class="date">{{ comment.comment }}</div>
+                </div>
+                {% empty %}
+                <p>No comments here yet :(</p>
+                {% endfor %}
             </div>
             <div class="col s3 m3 l3 xl3">
                 <i class="far fa-eye"></i>

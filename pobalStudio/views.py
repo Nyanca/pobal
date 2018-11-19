@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, rende
 from django.http import HttpResponseRedirect
 from django.utils import timezone
 
-from .models import Ticket
-from .forms import CreateTicketForm
+from .models import Ticket, Comment
+from .forms import CreateTicketForm, CommentForm
 
 def pobal_studio(request):
     # a view to render the pobal studio dashboard
@@ -44,13 +44,30 @@ def get_all_tickets(request):
     
 def ticket_detail(request, pk):
     # a view that renders a single ticket in full detail or returns 404 if not found
-    
     ticket = get_object_or_404(Ticket, pk=pk)
+    
     ticket.views += 1
     ticket.save()
-    
+
     return render(request, 'ticket_detail.html', {'ticket':ticket})
+
+def add_comment(request, pk):
+    ticket = get_object_or_404(Ticket, pk=pk)
+
+    if request.method == 'POST':
+        form = CommentForm(request.Post)
+        
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.ticket = ticket
+            comment.save()
+            return redirect(request, 'ticket_detail', pk=ticket.pk)
     
+    else:
+        form = CommentForm()
+        
+    return render(request, 'comment_form.html', {'form':form})
+
 def create_or_edit_ticket(request, pk=None):
     # get the selected ticket by id if it exists
     ticket = get_object_or_404(Ticket, pk=pk) if pk else None
@@ -72,3 +89,4 @@ def delete_ticket(request, pk):
     ticket.delete()
     
     return render(request, 'all_tickets.html')
+

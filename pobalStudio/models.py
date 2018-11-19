@@ -12,4 +12,11 @@ class Ticket(models.Model):
     
     def __str__(self):
         return self.title
- 
+
+class Comment(models.Model):
+    ticket = models.ForeignKey('pobalStudio.Ticket', on_delete=models.CASCADE, related_name='comments')
+    date = models.DateTimeField(blank=True, null=True, default=timezone.now)
+    comment = models.TextField()
+    
+    def __str__(self):
+        return self.comment
