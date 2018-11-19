@@ -19,6 +19,7 @@ from django.views.generic import RedirectView
 from django.views.static import serve
 from accounts import urls as urls_accounts
 from pobalStudio import urls as urls_studio
+from cart import urls as urls_cart
 from .settings import MEDIA_ROOT
 
 urlpatterns = [
@@ -26,6 +27,7 @@ urlpatterns = [
     url(r'^$', RedirectView.as_view(url='pobal/')),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^pobal/', include(urls_studio)),
+    url(r'^cart/', include(urls_cart)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
     
 ]
