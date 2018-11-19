@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'pobalStudio',
     'accounts',
+    'cart',
+    'checkout',
 ]
 
 MIDDLEWARE = [
