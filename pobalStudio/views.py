@@ -65,3 +65,10 @@ def create_or_edit_ticket(request, pk=None):
         ticket_form = CreateTicketForm(instance=ticket)
         
     return render(request, 'ticket_form.html', {'ticketForm':ticket_form})
+    
+def delete_ticket(request, pk):
+    # get the selected ticket obect by id and delete it from the db
+    ticket = Ticket.objects.get(pk=pk)
+    ticket.delete()
+    
+    return render(request, 'all_tickets.html')

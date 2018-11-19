@@ -46,6 +46,10 @@
                 <i class="far fa-money-bill-alt"></i>
                 <a href="{% url 'edit_ticket' ticket.id %}" class="btn btn-default">Edit Ticket</a>
             </div>
+            <div class="col s3 m3 l3 xl3">
+                <i class="far fa-money-bill-alt"></i>
+                <a href="{% url 'delete_ticket' ticket.id %}" class="btn btn-default">Delete Ticket</a>
+            </div>
         </div>
     </div>
 </div>
