@@ -14,8 +14,10 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
 def checkout(request):
-    # get POST data from forms
+    # a view to handle stripe payments
+    
     if request.method=="POST":
+        # get POST data from forms
         order_form = OrderForm(request.POST)
         payment_form = PaymentForm(request.POST)
         
