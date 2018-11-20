@@ -14,7 +14,10 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
 def checkout(request):
-    # a view to handle stripe payments
+# a view to handle stripe payments
+
+    # get exisiting cart or initialize new cart
+    cart = request.session.get('cart', {})
     
     if request.method=="POST":
         # get POST data from forms
@@ -27,8 +30,7 @@ def checkout(request):
             order.date = timezone.now()
             order.save()
             
-            # get instance of the cart and save purchase data to admin order_line
-            cart = request.session.get('cart', {})
+            # save purchase data to admin order_line
             total = 0
             for id, quantity in cart.items():
                 ticket = get_object_or_404(Ticket, pk=id)

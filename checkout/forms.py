@@ -3,7 +3,7 @@ from .models import Order
 
 class PaymentForm(forms.Form):
     # assign values to variables month / year choices
-    MONTH_CHOICES = [(i, i) for i in range (1, 12)]
+    MONTH_CHOICES = [(i, i) for i in range (1, 13)]
     YEAR_CHOICES = [(i, i) for i in range (2018, 2050)]
     
     # create payment form fields with required eqt false for server-side security
