@@ -3,7 +3,7 @@ from django.utils import timezone
 
 def view_cart(request):
     # renders a users' shopping cart with contents if any
-    return(request, 'cart.html')
+    return render(request, 'cart.html')
     
 def add_to_cart(request, id):
     # appends the quantity of an item to the cart within the current session using item id 
