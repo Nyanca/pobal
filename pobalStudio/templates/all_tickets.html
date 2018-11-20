@@ -41,7 +41,7 @@
             </div>
             <div class="col s3 m3 l3 xl3">
                 <i class="far fa-money-bill-alt"></i>
-                <p>Buy Ticket | €{{ticket.price}</p>
+                <a href="{% url 'add_to_cart' ticket.id %}">Buy Ticket | €{{ticket.price}}</a>
             </div>
         </div>
     </div>
