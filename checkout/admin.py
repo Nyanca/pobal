@@ -6,7 +6,7 @@ class OrderLineAdminInline(admin.TabularInline):
     model = OrderLine
 
 class OrderAdmin(admin.ModelAdmin):
-    # create inlines for single page editing of mulitiple models
+    # create inlines for single page editing of multiple models
     inlines = (OrderLineAdminInline, )
 
 admin.site.register(Order, OrderAdmin)
