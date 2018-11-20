@@ -4,12 +4,14 @@ from django.core.urlresolvers import reverse
 from .forms import UserLoginForm, UserRegistrationForm
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
+from middleware import get_current_session, get_current_user
 
 
 # Create your views here.
 def index(request):
     """A view that displays the index page"""
-    return render(request, "index.html")
+    user = request.user
+    return render(request, "index.html", {'user':user})
 
 
 def logout(request):
