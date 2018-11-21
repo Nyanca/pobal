@@ -1,5 +1,14 @@
-{% extends 'base.html' %}
-{% block content %}
-<h2>Index</h2>
-<h5>Welcome, {{ user }}</h5>{{p}}
+{% extends 'base.html' %} {% block content %}
+
+<div class="row center">
+    <div class="col s12 m12 l12 xl12">
+        <h2 class='sitefont sitecolourlight'>Pobal</h2>
+    </div>
+</div>
+<div class="row center">
+    <div class="col s12 m12 l12 xl12">
+        <a href='{% url "get_all_tickets" %}'><img src="/media/img/pobal_sphere.png"></img></a>
+    </div>
+</div>
+
 {% endblock %}

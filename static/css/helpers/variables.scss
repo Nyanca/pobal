@@ -8,22 +8,31 @@ $sitefont:'M PLUS Rounded 1c', sans-serif;
 //----------------------------colors
 $sitecolour1: #ff7f50;
 $sitecolour2: #ffa500;
+$sitecolourlight:#FFCC99;
+$box-highlight-colour: #FFCC99;
+$colourcontrastdark: #513883;
+$colourcontrastlight: #A280B9;
+$colourcontrastlightest: #CFC8DE;
 
 //--------------------------------------placholder variables
 //----------------------------colours
-%font-color i{
+%font-color{
   color: #FDFAF5;  
 }
 
 //----------------------------icons
 %icon{
   padding: 5px;
-  color:#FDFAF5;
+  color:#FFCC99;
 }
 
 //----------------------------backgrounds
 %background-gradient-orange{
     background:linear-gradient(to bottom right, #ff7f50, #ffa500);
+}
+
+%background-gradient-contrast{
+  background:linear-gradient(to bottom left,#513883, #A280B9);
 }
 
 %background-ticket{

@@ -1,17 +1,41 @@
-{% extends "base.html" %}
-{% load bootstrap_tags %}
-{% block content %}
-    <form method="post" action="{% url 'login' %}?next={{ next }}" class="accountform">
-        <fieldset class="form-group">
-            <legend>Login</legend>
-            <p>Don't have an account? <a href="{% url 'register' %}">Create account</a></p>
+{% extends "base.html" %} {% load bootstrap_tags %} {% block content %}
 
-            {% csrf_token %}
-            {{ user_form | as_bootstrap }}
-            
-             <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
-             
-            <button type="submit" class="btn btn-primary">Login</button>
-        </fieldset>
-    </form>
-{% endblock %}
+<div class="row">
+    <div class="col s12 m12 l12 xl12 center">
+        <h3 class='sitefont sitecolourlight'>The World of Pobal</h3>
+    </div>
+</div>
+<div class="row container sitecolour1 box-highlight-colour">
+    <div class="col s12 m12 l12 xl12">
+        <div class="row center light-padding-top">
+            <div class="col s12 m12 l12 xl12">
+                <i class="fas fa-user-circle fa-5x icon"></i>
+            </div>
+        </div>
+        <div class="row center light-padding-top">
+            <div class="col s12 m12 l12 xl12">
+                <p class='sitefont sitecolour1'>
+                    Discover Pobal, a world where your spirit is the breath of community. Help other Poblians build a creative space that channels good! From our zero-waste market place & craft shops, to community forums and active information groups, you can integrate into
+                    a community that wants to be a positive force in the ever-expanding techno-maze of modern day.
+                </p>
+            </div>
+        </div>
+        <div class="row center">
+            <div class="col s12 m12 l12 xl12">
+                <form method="post" action="{% url 'login' %}?next={{ next }}">
+                    <fieldset class="light-padding-top">
+                        {% csrf_token %} {{ user_form | as_bootstrap }}
+                    <button type="submit" class="button">Login</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col s12 m12 l12 xl12">
+                    <p class='light-padding-top'><a href="{% url 'password_reset' %}">Forgot my password</a></p>
+                    <p>Don't have an account?<a href="{% url 'register' %}"> Create account</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 @import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Poppins");
-.font-color i {
+.font-color {
   color: #FDFAF5; }
 
 .icon i {
   padding: 5px;
-  color: #FDFAF5; }
+  color: #FFCC99; }
 
 .background-orange {
   background: linear-gradient(to bottom right, #ff7f50, #ffa500); }
+
+.background-contrast {
+  background: linear-gradient(to bottom left, #513883, #A280B9); }
 
 .background-ticket {
   background-color: #F7EBE1; }
@@ -18,6 +21,36 @@
   border-style: solid;
   border-color: #CE5519;
   background-image: url("/static/img/paperlinen.jpeg"); }
+
+.button {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: #CFC8DE;
+  background: linear-gradient(to bottom right, #513883, #A280B9); }
+
+html,
+body {
+  height: 100%; }
+
+.wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px; }
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  /* Vertically center the text there */
+  background-color: #f5f5f5; }
 
 .sitefont {
   font-family: "M PLUS Rounded 1c", sans-serif; }
@@ -30,6 +63,21 @@
 
 .sitecolour2 {
   color: #ffa500; }
+
+.sitecolourlight {
+  color: #FFCC99; }
+
+.colourcontrastlightest {
+  color: #CFC8DE; }
+
+.colourcontrastlight a li {
+  color: #A280B9; }
+
+.colourcontrastdark {
+  color: #513883; }
+
+.box-highlight-colour {
+  background-color: #FFCC99; }
 
 .left {
   float: left;
@@ -48,7 +96,10 @@
 .half-width {
   width: 50%; }
 
-.medium-padding-top {
+.heavy-padding-top {
+  padding-top: 100px; }
+
+.medium-margin {
   margin: 50px; }
 
 .light-padding-top {
@@ -56,25 +107,5 @@
 
 .container-light {
   padding: 20px; }
-
-html,
-body {
-  height: 100%; }
-
-.wrap {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  /* Negative indent footer by it's height */
-  margin: 0 auto -60px; }
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  /* Vertically center the text there */
-  background-color: #f5f5f5; }
 
 /*# sourceMappingURL=main.css.map */

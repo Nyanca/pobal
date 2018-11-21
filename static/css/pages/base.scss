@@ -24,6 +24,30 @@
     color: $sitecolour2;
 }
 
+.sitecolourlight{
+    color: $sitecolourlight;
+}
+
+.colourcontrastlightest{
+    color: $colourcontrastlightest;
+}
+
+.colourcontrastlight a li{
+    color: $colourcontrastlight;
+}
+
+.colourcontrastdark{
+    color: $colourcontrastdark;
+}
+
+.box-highlight-colour{
+    background-color: $box-highlight-colour;
+}
+
+.background-contrast{
+    @extend %background-gradient-contrast;
+}
+
 .background-orange{
     @extend %background-gradient-orange;
 }
@@ -55,7 +79,11 @@
     width: 50%;
 }
 
-.medium-padding-top {
+.heavy-padding-top {
+    padding-top: 100px;
+}
+
+.medium-margin{
     margin: 50px;
 }
 
@@ -72,26 +100,7 @@
     @extend %ticket-style;
 }
 
-//----------------------------sticky footer styles
-html,
-body {
-    height: 100%;
+//----------------------------buttons
+.button{
+    @extend %button;
 }
-
-.wrap{
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-        /* Negative indent footer by it's height */
-    margin: 0 auto -60px;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px; 
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
-}
-

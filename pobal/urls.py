@@ -28,7 +28,7 @@ from .settings import MEDIA_ROOT
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', login, name='login'),
-    url(r'^home/', home, name='home'),
+    url(r'^home/$', home, name='home'),
     # url(r'^$', RedirectView.as_view(url='pobal/')),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^pobal/', include(urls_studio)),

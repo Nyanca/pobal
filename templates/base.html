@@ -23,20 +23,20 @@
 
 </head>
 
-<body class='background-orange'>
-    <div class='wrap container-light'>
+<body class='wrap background-orange'>
+    <div class='container-light'>
         <div>
             <!---header--->
             <header class='header'>
-                <div class="row right sitefont">
+                <div class="row right sitefont sitecolourlight">
                     <div class='col s6 m6 l6 xl 6 icon right'><i class="fas fa-user-circle fa-3x"></i>
                         <br>{{ user }}</div>
                 </div>
             </header>
             <!---navigation--->
-            <ul id="slide-out" class="sidenav sitefont">
+            <ul id="slide-out" class="sidenav sitefont background-contrast colourcontrastlight">
                 <li>
-                    <div class="user-view">
+                    <div class="user-view colourcontrastlight">
                         {% if user.is_authenticated %}
                         <a href="#user"><img class="circle" src="{{ userimage }}"></a>
                         <a href="#name"><span class="white-text name">{{ user }}</span></a>
@@ -70,21 +70,21 @@
                     </a>
                 </li>
                 {% else %}
-                <a href="{% url 'register' %}">Register</a>
-                <a href="{% url 'login' %}">Log In</a> {% endif %}
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Log In</a></li> {% endif %}
             </ul>
             <ul id="slide-out" class="sidenav">
                 <li><a class="sidenav-close" href="#!">Clicking this will close Sidenav</a></li>
             </ul>
-            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
+            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large icon"><i class="fas fa-bars fa-2x"></i></a>
 
             <!---dashboard body--->
             {% block content %} {% endblock %}
         </div>
     </div>
     <!---footer--->
-    <footer class='footer'>
-        <div class='container sitefont'><strong>Pobal App 2018&copy</strong>| a project for CI Dublin<i class="fas fa-project-diagram"></i>
+    <footer>
+        <div class='container sitefont sitecolourlight'><strong>Pobal App 2018&copy</strong>| a project for CI Dublin<i class="fas fa-project-diagram"></i>
         </div>
     </footer>
 </body>
