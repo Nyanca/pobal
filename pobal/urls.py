@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^home/$', home, name='home'),
     # url(r'^$', RedirectView.as_view(url='pobal/')),
     url(r'^accounts/', include(urls_accounts)),
-    url(r'^pobal/', include(urls_studio)),
+    url(r'^pobal_studio/', include(urls_studio)),
     url(r'^cart/', include(urls_cart)),
     url(r'^checkout/', include(urls_checkout)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
