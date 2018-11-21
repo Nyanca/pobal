@@ -6,7 +6,7 @@ class Ticket(models.Model):
     summary = models.CharField(max_length=100, blank=False)
     detail = models.TextField()
     image = models.ImageField(upload_to='img', blank=True, null=True,
-    default='static/img/star.png')
+    default="img/pobal_sphere.png")
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
     price = models.DecimalField(max_digits=6, decimal_places=2, default=0.00)
