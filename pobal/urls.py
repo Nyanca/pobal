@@ -18,20 +18,21 @@ from django.contrib import admin
 from django.views.generic import RedirectView
 from django.views.static import serve
 from accounts import urls as urls_accounts
+from accounts.views import login
 from pobalStudio import urls as urls_studio
 from cart import urls as urls_cart
 from checkout import urls as urls_checkout
-from home import urls as urls_home
+from home.views import index
 from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', RedirectView.as_view(url='pobal/')),
+    url(r'^$', login, name='login'),
+    # url(r'^$', RedirectView.as_view(url='pobal/')),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^pobal/', include(urls_studio)),
     url(r'^cart/', include(urls_cart)),
     url(r'^checkout/', include(urls_checkout)),
-    url(r'^home/', include(urls_home)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
     
 ]

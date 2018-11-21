@@ -4,6 +4,8 @@
     <form method="post" action="{% url 'login' %}?next={{ next }}" class="accountform">
         <fieldset class="form-group">
             <legend>Login</legend>
+            <p>Don't have an account? <a href="{% url 'register' %}">Create account</a></p>
+
             {% csrf_token %}
             {{ user_form | as_bootstrap }}
             
