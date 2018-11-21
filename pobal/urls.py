@@ -22,12 +22,13 @@ from accounts.views import login
 from pobalStudio import urls as urls_studio
 from cart import urls as urls_cart
 from checkout import urls as urls_checkout
-from home.views import index
+from home.views import home
 from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', login, name='login'),
+    url(r'^home/', home, name='home'),
     # url(r'^$', RedirectView.as_view(url='pobal/')),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^pobal/', include(urls_studio)),
