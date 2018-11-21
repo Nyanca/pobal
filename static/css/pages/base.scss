@@ -7,6 +7,17 @@
     font-family: $pobalfont;
 }
 
+.font18px{
+    font-size: 18px;
+}
+
+.font20px{
+    font-size: 20px;
+}
+
+.font30px{
+    font-size: 30px;
+}
 //----------------------------icons
 .icon i{
     @extend %icon;

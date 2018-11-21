@@ -18,9 +18,7 @@
 
 .ticket-style {
   padding: 20px;
-  border-style: solid;
-  border-color: #CE5519;
-  background-image: url("/static/img/paperlinen.jpeg"); }
+  border-style: solid; }
 
 .button {
   width: 100px;
@@ -57,6 +55,15 @@ body {
 
 .brandfont {
   font-family: "Poppins", sans-serif; }
+
+.font18px {
+  font-size: 18px; }
+
+.font20px {
+  font-size: 20px; }
+
+.font30px {
+  font-size: 30px; }
 
 .sitecolour1 {
   color: #ff7f50; }
