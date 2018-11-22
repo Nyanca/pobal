@@ -20,10 +20,10 @@
             </tr>
         </thead>
         {% for ticket in all_tickets %}
-        <tbody>
+        <tbody class='center-text'>
             <tr>
                 <td>
-                    <img src="/media/{{ ticket.image }}" width='50%' height='50%'>
+                    <img src="/media/{{ ticket.image }}" width='50%'>
                 </td>
                 <td>
                     <a href="{% url 'ticket_detail' ticket.id %}">
@@ -31,13 +31,13 @@
                     </a>
                 </td>
                 <td>
-                    <i class="far fa-eye">
-                      <p>{{ ticket.views}}</p>  
+                    <i class="far fa-comment-dots">
+                      <p>{{ ticket.comments.count}}</p>  
                     </i>
                 </td>
                 <td>
-                    <i class="far fa-comment-dots">
-                      <p>{{ ticket.comments.count}}</p>  
+                    <i class="far fa-eye">
+                      <p>{{ ticket.views}}</p>  
                     </i>
                 </td>
                 <td>{{ ticket.price }}</td>
