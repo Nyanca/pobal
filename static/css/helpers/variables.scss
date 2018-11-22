@@ -7,12 +7,14 @@ $sitefont:'M PLUS Rounded 1c', sans-serif;
 
 //----------------------------colors
 $sitecolour1: #ff7f50;
+$sitecolour1tint: #ffa584;
 $sitecolour2: #ffa500;
 $sitecolourlight:#FFCC99;
 $box-highlight-colour: #FFCC99;
 $colourcontrastdark: #513883;
 $colourcontrastlight: #A280B9;
 $colourcontrastlightest: #CFC8DE;
+$colouralert: #E95D17;
 
 //--------------------------------------placholder variables
 //----------------------------colours
@@ -23,7 +25,12 @@ $colourcontrastlightest: #CFC8DE;
 //----------------------------icons
 %icon{
   padding: 5px;
-  color:#FFCC99;
+  color:$box-highlight-colour;
+}
+
+%icon-rev{
+  padding: 5px;
+  color:$sitecolour1;
 }
 
 //----------------------------backgrounds

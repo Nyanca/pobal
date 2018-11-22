@@ -7,6 +7,10 @@
   padding: 5px;
   color: #FFCC99; }
 
+.icon-rev i {
+  padding: 5px;
+  color: #ff7f50; }
+
 .background-orange {
   background: linear-gradient(to bottom right, #ff7f50, #ffa500); }
 
@@ -73,6 +77,9 @@ body {
 .sitecolour1 {
   color: #ff7f50; }
 
+.sitecolour1tint-bg {
+  background-color: #ffa584; }
+
 .sitecolour2 {
   color: #ffa500; }
 
@@ -87,6 +94,9 @@ body {
 
 .colourcontrastdark {
   color: #513883; }
+
+.colouralert-bg {
+  background-color: #E95D17; }
 
 .box-highlight-colour {
   background-color: #FFCC99; }

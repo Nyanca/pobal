@@ -1,25 +1,32 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="row container center">
+<div class="row container center sitefont colourcontrastlightest box-highlight-colour icon-rev">
     <div class="col s12 m12 l12 xl12">
-        <div class="row icon container">
-            <div class="col s6 m6 l6 xl6">
-                <i class="far fa-money-bill-alt fa-2x"> €{{ticket.price}}</i>
-                <label class='sitecolourlight'>This ticket is for sale :) </label>
-            </div>
-            <div class="col s6 m6 l6 xl6 sitecolourlight">
-                <form method="post" action="{% url 'add_to_cart' ticket.id %}" class='sitecolourlight'>
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input name='quantity' type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                        <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
-                        </span>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class='row sitefont box-highlight-colour sitecolour1 ticket-style'>
+        <nav class='box-highlight-colour'>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="{% url 'edit_ticket' ticket.id %}">
+                        <i class="fas fa-pencil-alt fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'delete_ticket' ticket.id %}">
+                        <i class="fas fa-minus-circle fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="far fa-star fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'add_comment' pk=ticket.id %}">
+                        <i class="far fa-comment-dots fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class='row sitefont sitecolour1 scrollable ticket-style'>
             <div class="col s12 m12 l12 xl12">
                 <div class="row">
                     <div class="col s2 m3 l3 xl3">
@@ -41,42 +48,47 @@
                 </div>
             </div>
         </div>
-        <div class="row icon">
-            <div class="col s3 m3 l3 xl3">
-                <a href="{% url 'edit_ticket' ticket.id %}">
-                    <i class="fas fa-pencil-alt fa-2x"></i>
-                </a>
+        <div class="row">
+            <div class="col s12 m12 l12 xl12">
+                <i class="far fa-comment-dots fa-2x"><h6 class='sitefont sitecolour1'>Comments</h6></i> {% for comment in ticket.comments.all %}
+                <div class="row">
+                    <div class="col s2 m2 l2 xl2 icon-rev">
+                        <i class="fas fa-user-circle fa-2x"></i>
+                    </div>
+                    <div class="col s8 m8 l8 xl8 sitecolour1tint-bg sitecolourlight" style='border-radius: 10px;'>
+                        <p>{{ user | title}} : {{ comment.comment }}</p>
+                    </div>
+                </div>
+                {% empty %}
+                <p>No comments..</p>
+                {% endfor %}
             </div>
-            <div class="col s3 m3 l3 xl3">
-                <a href="{% url 'delete_ticket' ticket.id %}">
-                    <i class="fas fa-minus-circle fa-2x"></i>
-                </a>
-            </div>
-            <div class="col s3 m3 l3 xl3">
-                <i class="far fa-eye fa-2x"></i>
-                <p>{{ticket.views}}</p>
-            </div>
-            <div class="col s3 m3 l3 xl3">
-                <i class="far fa-star fa-2x"></i>
-                <p>{{ticket.likes}}</p>
+        </div>
+        <div class="row icon center sitefont sitecolourlight">
+            <div class="col s12 m12 l12 xl12">
+                <div class="row">
+                    <div class="col s4 m4 l4 xl4">
+                        <label class='sitecolourlight colouralert-bg container-light' style='border-radius:5px;'>This ticket is for sale
+                        </label>
+                    </div>
+                    <div class="col s2 m2 l2 xl2">
+                        <h6 class='sitefont sitecolourlight'>Price: €{{ticket.price}}</h6>
+                    </div>
+                    <div class="col s6 m6 l6 xl6 sitecolourlight">
+                        <form method="post" action="{% url 'add_to_cart' ticket.id %}" class='sitecolourlight'>
+                            {% csrf_token %}
+                            <div class="input-group">
+                                <input name='quantity' type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-success" type="submit"><i class="fas fa-shopping-cart"></i></button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col s12 m12 l12 xl12">
-            <a class="btn btn-default" href="{% url 'add_comment' pk=ticket.id %}">
-                    <i class="far fa-comment-dots fa-2x"></i>
-                </a>
-             {% for comment in ticket.comments.all %}
-            <div>
-                <div>{{ comment.comment }}</div>
-            </div>
-            {% empty %}
-            <p>No comments..</p>
-            {% endfor %}
-        </div>
-    </div>
-</div>
 </div>
 
 {% endblock %}

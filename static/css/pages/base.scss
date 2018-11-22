@@ -31,6 +31,10 @@ body {
     @extend %icon;
 }
 
+.icon-rev i{
+    @extend %icon-rev;
+}
+
 //----------------------------colours
 .font-color {
     @extend %font-color;
@@ -38,6 +42,10 @@ body {
 
 .sitecolour1 {
     color: $sitecolour1;
+}
+
+.sitecolour1tint-bg {
+    background-color: $sitecolour1tint;
 }
 
 .sitecolour2 {
@@ -58,6 +66,10 @@ body {
 
 .colourcontrastdark {
     color: $colourcontrastdark;
+}
+
+.colouralert-bg{
+    background-color: $colouralert;
 }
 
 .box-highlight-colour {
