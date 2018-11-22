@@ -1,4 +1,5 @@
 {% extends 'base.html' %}{% load static from staticfiles %} {% block content %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" rel="stylesheet" />
 
 <div class="row container center font30px">
     <div class="col s12 m12 l12 xl12">
@@ -6,52 +7,44 @@
         </p>
     </div>
 </div>
-{% for ticket in all_tickets %}
-<div class="row container">
-    <div class="col s12 m12 l12 xl12">
-        <div class='row sitefont sitecolour1 ticket-style box-highlight-colour'>
-            <div class="col s12 m12 l12 xl12">
-                <div class="row">
-                    <div class="col s2 m3 l3 xl3">
-                        <img src="/media/{{ ticket.image }}" width='50%' height='50%'>
-                    </div>
-                    <div class="col s8 m6 l6 xl6">
+
+<div class="container responsive-table table-status-sheet scrollable box-highlight-colour sitefont sitecolour1">
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Views</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        {% for ticket in all_tickets %}
+        <tbody>
+            <tr>
+                <td>
+                    <img src="/media/{{ ticket.image }}" width='50%' height='50%'>
+                </td>
+                <td>
+                    <a href="{% url 'ticket_detail' ticket.id %}">
                         <h5 class='sitefont sitecolour1'>{{ ticket.title | title }}</h5>
-                        <h6 class=' sitefont sitecolour1'>{{ ticket.summary }}</h6>
-                    </div>
-                    <div class="col s2 m3 l3 xl3">
-                        <p>{{ ticket.date }}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12 m12 l12 xl12">
-                        <p>{{ ticket.detail|truncatewords:30 }}</p>
-                        <p><a href="{% url 'ticket_detail' ticket.id %}">Read more</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row icon sitecolourlight center">
-            <div class="col s3 m3 l3 xl3">
-                <i class="far fa-comment-dots fa-2x"></i>
-                <p>{{ ticket.comments.count}}</p>
-            </div>
-            <div class="col s3 m3 l3 xl3">
-                <i class="far fa-eye fa-2x"></i>
-                <p>{{ticket.views}}</p>
-            </div>
-            <div class="col s3 m3 l3 xl3">
-                <i class="far fa-star fa-2x"></i>
-                <p>{{ticket.likes}}</p>
-            </div>
-            <div class="col s3 m3 l3 xl3 colourcontrastlight">
-                <a href="{% url 'add_to_cart' ticket.id %}">
-                    <i class="far fa-money-bill-alt fa-2x"></i>
-                </a>
-                <p>€{{ticket.price}}</p>
-            </div>
-        </div>
-    </div>
+                    </a>
+                </td>
+                <td>
+                    <i class="far fa-eye">
+                      <p>{{ ticket.views}}</p>  
+                    </i>
+                </td>
+                <td>
+                    <i class="far fa-comment-dots">
+                      <p>{{ ticket.comments.count}}</p>  
+                    </i>
+                </td>
+                <td>{{ ticket.price }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
 </div>
 
-{% endfor %} {% endblock %}
+{% endblock %}

@@ -50,6 +50,11 @@ body {
   /* Vertically center the text there */
   background-color: #f5f5f5; }
 
+html,
+body {
+  width: 100%;
+  height: 100%; }
+
 .sitefont {
   font-family: "M PLUS Rounded 1c", sans-serif; }
 
@@ -114,5 +119,27 @@ body {
 
 .container-light {
   padding: 20px; }
+
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.scrollable {
+  display: block;
+  height: 300px;
+  overflow: auto; }
+
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; }
+
+thead {
+  width: calc( 100% - 1em); }
+
+table {
+  width: 100%; }
 
 /*# sourceMappingURL=main.css.map */

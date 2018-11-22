@@ -44,3 +44,9 @@ $colourcontrastlightest: #CFC8DE;
   padding: 20px;
   border-style: solid;
 }
+
+%scrollable{
+  background-color:$box-highlight-colour;
+  overflow-y: auto; 
+  overflow-x: hidden;
+}

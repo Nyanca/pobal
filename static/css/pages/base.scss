@@ -1,69 +1,78 @@
+//----------------------------body
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
 //----------------------------fonts
-.sitefont{
+.sitefont {
     font-family: $sitefont;
 }
 
-.brandfont{
+.brandfont {
     font-family: $pobalfont;
 }
 
-.font18px{
+.font18px {
     font-size: 18px;
 }
 
-.font20px{
+.font20px {
     font-size: 20px;
 }
 
-.font30px{
+.font30px {
     font-size: 30px;
 }
+
 //----------------------------icons
-.icon i{
+.icon i {
     @extend %icon;
 }
+
 //----------------------------colours
-.font-color{
+.font-color {
     @extend %font-color;
 }
 
-.sitecolour1{
+.sitecolour1 {
     color: $sitecolour1;
 }
 
-.sitecolour2{
+.sitecolour2 {
     color: $sitecolour2;
 }
 
-.sitecolourlight{
+.sitecolourlight {
     color: $sitecolourlight;
 }
 
-.colourcontrastlightest{
+.colourcontrastlightest {
     color: $colourcontrastlightest;
 }
 
-.colourcontrastlight a li{
+.colourcontrastlight a li {
     color: $colourcontrastlight;
 }
 
-.colourcontrastdark{
+.colourcontrastdark {
     color: $colourcontrastdark;
 }
 
-.box-highlight-colour{
+.box-highlight-colour {
     background-color: $box-highlight-colour;
 }
 
-.background-contrast{
+.background-contrast {
     @extend %background-gradient-contrast;
 }
 
-.background-orange{
+.background-orange {
     @extend %background-gradient-orange;
 }
 
-.background-ticket{
+.background-ticket {
     @extend %background-ticket;
 }
 
@@ -94,7 +103,7 @@
     padding-top: 100px;
 }
 
-.medium-margin{
+.medium-margin {
     margin: 50px;
 }
 
@@ -102,16 +111,45 @@
     padding-top: 20px;
 }
 
-.container-light{
-    padding:20px;
+.container-light {
+    padding: 20px;
+}
+
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 //----------------------------special styles
-.ticket-style{
+.ticket-style {
     @extend %ticket-style;
 }
 
+//----------------------------tables
+.scrollable{
+    display: block;
+    height: 300px;
+    overflow: auto; 
+}
+
+thead,
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+thead {
+    width: calc( 100% - 1em)
+}
+
+table {
+    width: 100%;
+}
+
+
 //----------------------------buttons
-.button{
+.button {
     @extend %button;
 }
