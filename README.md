@@ -7,4 +7,4 @@ designed to build community and to enable that community to build their own envi
 [![Build Status](https://travis-ci.org/Nyanca/pobal.svg?branch=master)](https://travis-ci.org/Nyanca/pobal)
 
 # Credits 
-CI / wangwenpei, django-account-helper
+CI / wangwenpei, django-account-helper / https://github.com/codingforentrepreneurs/Django-Likes

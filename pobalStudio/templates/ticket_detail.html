@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#!">
+                    <a href="{% url 'like' ticket.id %}">
                         <i class="fas fa-thumbs-up fa-2x">{{ticket.likes.count}}</i>
                     </a>
                 </li>

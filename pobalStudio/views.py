@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404, render_to_response
 from django.http import HttpResponseRedirect
+from django.views.generic import RedirectView
 from django.utils import timezone
 
 from .models import Ticket, Comment
@@ -50,6 +51,21 @@ def ticket_detail(request, pk):
     ticket.save()
 
     return render(request, 'ticket_detail.html', {'ticket':ticket})
+
+def ticket_like_toggle(request, pk):
+    '''
+    a view that toggles the like feature to like or unlike an object by id, and returns the same page reloaded with new data about like toggle status
+    '''
+    ticket = get_object_or_404(Ticket, pk=pk)
+    user = request.user
+    
+    if user.is_authenticated():
+        if user in ticket.likes.all():
+            ticket.likes.remove(user)
+        else:
+            ticket.likes.add(user)
+    
+    return redirect('ticket_detail', pk=ticket.pk)
     
 def add_comment(request, pk):
     # a view to deal with data from the user comment form
