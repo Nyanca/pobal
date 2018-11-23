@@ -10,6 +10,7 @@ class Ticket(models.Model):
     image = models.ImageField(upload_to='img', blank=True, null=True,
     default="img/pobal_sphere.png")
     views = models.IntegerField(default=0)
+    likes = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name='ticket_likes')
     price = models.DecimalField(max_digits=6, decimal_places=2, default=0.00)
     date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     
