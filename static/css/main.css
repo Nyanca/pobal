@@ -11,6 +11,9 @@
   padding: 5px;
   color: #ff7f50; }
 
+.icon-resizable {
+  font-size: 3vw; }
+
 .background-orange {
   background: linear-gradient(to bottom right, #ff7f50, #ffa500); }
 

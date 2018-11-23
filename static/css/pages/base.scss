@@ -39,6 +39,10 @@ body {
     @extend %icon-rev;
 }
 
+.icon-resizable{
+    @extend %icon-resizable;
+}
+
 //----------------------------colours
 .font-color {
     @extend %font-color;
@@ -173,3 +177,5 @@ table {
 .buttonsubmit{
     @extend %buttonsubmit
 }
+
+//----------------------------media queries

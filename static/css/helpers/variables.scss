@@ -33,6 +33,10 @@ $colouralert: #E95D17;
   color:$sitecolour1;
 }
 
+%icon-resizable{
+  font-size: 3vw;
+}
+
 //----------------------------backgrounds
 %background-gradient-orange{
     background:linear-gradient(to bottom right, #ff7f50, #ffa500);
