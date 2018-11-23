@@ -50,7 +50,7 @@ def ticket_detail(request, pk):
     ticket.save()
 
     return render(request, 'ticket_detail.html', {'ticket':ticket})
-
+    
 def add_comment(request, pk):
     # a view to deal with data from the user comment form
     ticket = get_object_or_404(Ticket, pk=pk)
