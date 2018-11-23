@@ -9,8 +9,8 @@ $sitefont:'M PLUS Rounded 1c', sans-serif;
 $sitecolour1: #ff7f50;
 $sitecolour1tint: #ffa584;
 $sitecolour2: #ffa500;
-$sitecolourlight:#FFCC99;
-$box-highlight-colour: #FFCC99;
+$sitecolourlight:#fff2ed;
+$box-highlight-colour: #fff2ed;
 $colourcontrastdark: #513883;
 $colourcontrastlight: #A280B9;
 $colourcontrastlightest: #CFC8DE;
@@ -39,7 +39,7 @@ $colouralert: #E95D17;
 }
 
 %background-gradient-contrast{
-  background:linear-gradient(to bottom left,#513883, #A280B9);
+  background:linear-gradient(to bottom right,#513883, #A280B9);
 }
 
 %background-ticket{

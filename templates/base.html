@@ -38,24 +38,23 @@
             <!---navigation--->
             <ul id="slide-out" class="sidenav sitefont background-contrast colourcontrastlight">
                 <li>
-                    <div class="user-view colourcontrastlight">
+                    <div class="user-view">
                         {% if user.is_authenticated %}
                         <a href="#user"><img class="circle" src="{{ userimage }}"></a>
                         <a href="#name"><span class="white-text name">{{ user }}</span></a>
                         <a href="#email"><span class="white-text email">{{ email }}</span></a>
-                        <a href="{% url 'profile' %}">Profile</a>
-                        <a href="{% url 'logout' %}">Log Out</a>
+                        <a href="{% url 'logout' %}" class='sitefont colourcontrastlightest'>Log Out</a>
                     </div>
                 </li>
+                <li><a href="{% url 'home' %}"><i class="fas fa-home"></i></i>Home</a></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <li><a href="{% url 'profile' %}"><i class="fas fa-user-circle"></i>MyProfile</a></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
                 <li><a href="#!"><i class="fas fa-plus-circle"></i>Create Ticket</a></li>
-                <li>
-                    <div class="divider"></div>
-                </li>
-                <li><a href="#!"><i class="fas fa-minus-circle"></i>Delete Ticket</a></li>
-                <li>
-                    <div class="divider"></div>
-                </li>
-                <li><a href="#!"><i class="fas fa-pencil-alt"></i>Edit Ticket</a></li>
                 <li>
                     <div class="divider"></div>
                 </li>

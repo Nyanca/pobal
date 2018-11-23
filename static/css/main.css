@@ -5,7 +5,7 @@
 
 .icon i {
   padding: 5px;
-  color: #FFCC99; }
+  color: #fff2ed; }
 
 .icon-rev i {
   padding: 5px;
@@ -15,7 +15,7 @@
   background: linear-gradient(to bottom right, #ff7f50, #ffa500); }
 
 .background-contrast {
-  background: linear-gradient(to bottom left, #513883, #A280B9); }
+  background: linear-gradient(to bottom right, #513883, #A280B9); }
 
 .background-ticket {
   background-color: #F7EBE1; }
@@ -71,6 +71,9 @@ body {
 .font20px {
   font-size: 20px; }
 
+.font25px {
+  font-size: 25px; }
+
 .font30px {
   font-size: 30px; }
 
@@ -84,12 +87,12 @@ body {
   color: #ffa500; }
 
 .sitecolourlight {
-  color: #FFCC99; }
+  color: #fff2ed; }
 
 .colourcontrastlightest {
   color: #CFC8DE; }
 
-.colourcontrastlight a li {
+.colourcontrastlight ul li a {
   color: #A280B9; }
 
 .colourcontrastdark {
@@ -99,7 +102,7 @@ body {
   background-color: #E95D17; }
 
 .box-highlight-colour {
-  background-color: #FFCC99; }
+  background-color: #fff2ed; }
 
 .left {
   float: left;
