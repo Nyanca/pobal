@@ -1,7 +1,9 @@
 from django.db import models
+from django.conf import settings
 from django.utils import timezone
 
 class Ticket(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
     title = models.CharField(max_length=50, blank=False)
     summary = models.CharField(max_length=100, blank=False)
     detail = models.TextField()
