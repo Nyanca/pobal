@@ -3,6 +3,11 @@
 <div class="row container center sitefont colourcontrastlightest box-highlight-colour icon-rev">
     <div class="col s12 m12 l12 xl12">
         <nav class='box-highlight-colour'>
+            <div class='left icon'>
+                <a href="{% url 'tickets' %}">
+                    <i class="fas fa-chevron-left fa-2x"></i>
+                </a>
+            </div>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
                     <a href="{% url 'edit_ticket' ticket.id %}">
