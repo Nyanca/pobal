@@ -34,6 +34,14 @@
   color: #CFC8DE;
   background: linear-gradient(to bottom right, #513883, #A280B9); }
 
+.buttonsubmit {
+  text-align: center;
+  color: #ff7f50;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: none; }
+
 html,
 body {
   height: 100%; }

@@ -8,3 +8,12 @@
     color: $colourcontrastlightest;
     background:linear-gradient(to bottom right,#513883, #A280B9);
 }
+
+%buttonsubmit{
+    text-align: center;
+    color: $sitecolour1;
+    border: none;
+    background:none;
+    padding: 0;
+    margin: none;
+}

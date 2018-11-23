@@ -169,3 +169,7 @@ table {
 .button {
     @extend %button;
 }
+
+.buttonsubmit{
+    @extend %buttonsubmit
+}
