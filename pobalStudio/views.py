@@ -60,6 +60,7 @@ def ticket_like_toggle(request, pk):
     user = request.user
     
     if user.is_authenticated():
+        # ensure that user can like an object once only
         if user in ticket.likes.all():
             ticket.likes.remove(user)
         else:

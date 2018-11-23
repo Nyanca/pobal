@@ -22,6 +22,7 @@ from accounts.views import login
 from pobalStudio import urls as urls_studio
 from cart import urls as urls_cart
 from checkout import urls as urls_checkout
+from search import urls as urls_search
 from home.views import home
 from .settings import MEDIA_ROOT
 
@@ -34,6 +35,7 @@ urlpatterns = [
     url(r'^pobal_studio/', include(urls_studio)),
     url(r'^cart/', include(urls_cart)),
     url(r'^checkout/', include(urls_checkout)),
+    url(r'^search/', include(urls_search)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
     
 ]
