@@ -77,4 +77,6 @@ class OtherOtherFeatures(TestCase):
             ticket.views += 1
             self.assertEqual(ticket.views, 1)
     
+ 
+        
         
