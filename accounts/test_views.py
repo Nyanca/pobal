@@ -43,8 +43,6 @@ class TestAccountViews(TestCase):
         c.logout()
         # check that value 25 is raise with message to denote message level constant 'success'
         self.assertEqual(25, messages.SUCCESS)
-        # self.assertRedirects(r, '/accounts/login/')
-        # r = c.get('/accounts/logout/', follow=True)
+     
         
-   
-   
+    

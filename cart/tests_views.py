@@ -1,3 +1,4 @@
+from django.test import TestCase
 from .views import view_cart, add_to_cart, edit_cart
 from pobalStudio.models import Ticket
 from .contexts import cart_contents
