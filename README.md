@@ -62,7 +62,8 @@ Psycopg2 is used to handle communication between Python and PostgreSQL http://in
 ## Features
 ### existing features
 
-Pobal Studio supports the following features: 
+Pobal Studio supports the following features:
+
     1) User authentication system supporting login / logout / register
     2) CRUD operations for creating, readind, updating & deleting tickets
     3) A ticket like toggle feature within the full ticket viewport, allowing a user to like or unlike a ticket object
@@ -75,6 +76,7 @@ Pobal Studio supports the following features:
 
 ### features to implement
 The following features would enhance the Pobal Studio experience:
+
     1) The ability to respond to user comments, and edit / delete buttons for each individual comment
     2) Updating user profile details such as change of email address
     3) A more complex search feature that would allow users to search by date, most viewed or ticket price as well as by ticket title. Further I would implement a smart feature to show results similar to the ticket searched for. This would better account for human error. 
