@@ -1,10 +1,110 @@
-# pobal web-app
+# Pobal Community Web App
 
-an experimental app written in Python using framework Django v1.11 and db sqlite
-designed to build community and to enable that community to build their own environment
+## Intro / Summary
+This project has been developed as part of CI Dublin's coding bootcamp for software developers following modules in HTML, CSS, User Centric Frontend Dev, Javascript Fundamentals, Interactive Frontend Dev, Python Fundamentals, Practical Python, Data Centric Dev and Full Stack Frameworks with Django. The brief was to create an issue tracker. 
 
-# travis intergrated testing
+Taking this brief as project scope, I envisioned Pobal, a community web app that bases it's content on community input. The word 'pobal' itself is gaelic for 'community'. Pobal, I imagine, is an app comprising of typical community-based components such as a market place for food and clothing, an events guide, and a discussion forum for socio-political topics all with an active environmental slant. Poblians i.e members of the Pobal community would then be active participants, discussing what would enhance this virtual community and voicing suggestions via tickets put out for tender in Pobal Studio. Pobal Studio is the focus of this project. 
+
+Pobal Studio is designed to build community and to enable that community to build their own community environment. 
+
+## UX 
+Pobal Studio has a clean responsive layout, and creates its own recognisable environment with brand colors of a warm orange gradient and purple buttons, consistent font for main brand & site usage and icons stylistically and informatively place throughout. 
+
+Navigation is done via inline buttons for CRUD operations, and a standard sliding nav annotated by a burger icon. Tickets are displayed in a scrolling box to save on screen space, and information overload. The experience is a simple, clean, pleasing and easy-to-use interface (with some issues to address on smaller devices). 
+
+My wireframes for this design are all pencil sketches on creased paper, so I haven't included them (my free usage in Marvelapp ran out, and while I tried other free tools such as Pencil, I found them awkward to use). Here are some user stories that lead to the end design: 
+
+    1) I download a lot of apps, so if an app doesn't have a very good visual standard or function smoothly, I quickly move along.
+    2) I'm a patron, and I look for good causes to donate to. I need to be able to easily access information about what I'm buying and to pay out money in a secure environment. 
+
+#### a note on the Pobal icon
+When loading the home page, a purple glowing orb logo is presented center page. Clicking on this directs the user to Pobal Studio. With more apps and aspects of the community built such as an online market place, each new root app would be visualized as an orb connected to the center orb 'Pobal Studio', which is the heart of the Pobal App. Each orb would be clickable creating an original home page navigation system. And in this way, the logo itself would expand with the community, which is a nice thought. 
+
+#### Viewport sizing units
+When designing this app, I came across a newish (2014) set of sizing units that are immensley useful. For anyone who doesn't know about them, here they are:
+
+    vw: 1/100th viewport width
+    vh: 1/100th viewport height
+    vmin: 1/100th of the smallest side
+    vmax: 1/100th of the largest side
+
+And here's a good article about how to use them, and potential issue fixes: 
+https://web-design-weekly.com/2014/11/18/viewport-units-vw-vh-vmin-vmax/
+
+## Tech Used
+Logic is written in Python 3, a language I love to use largely because of it's visual attributes https://www.python.org/
+
+Django v1.11 is the backend framework used in this project. It's very fast, reliable, versatile and provides great functionality. https://www.djangoproject.com/ 
+
+SQlite has been the DB in use during production https://www.sqlite.org/index.html
+Postgres takes over after production. https://www.postgresql.org/
+
+Materialize was used as a frontend framework. I particularly like it's easy to use sticky footer (which I've found can be a bit of a nuisance otherwise) and I prefer its grid system annotation to Bootstrap.  https://materializecss.com/
+
+Bootstrap was used a frontend framework in conjunction with Materialize. I particularly like Bootstraps container classes for a quick clean modern style. https://getbootstrap.com/
+
+Fonts came from google fonts which are easily imported to any css or html document https://fonts.google.com/
+
+Icons were sourced from. While subscription customers can access slightly slicker icons font awesome free icons do the job, and I much prefer them to meterialize icons in terms of variety. https://fontawesome.com/
+
+HTML5 is used in conjunction with Jinja http://jinja.pocoo.org/ to create dynamic templates and to prevent repetition of components such as head links, navs and footer.
+
+Sass is used for styling. Yeh, I love Sass.. https://sass-lang.com/
+
+Stripe is used to handle payments in a secure way https://stripe.com/ie
+
+Gunicorn implements a lightweight Python WSGI HTTP Server https://gunicorn.org/
+
+Pillow imaging library is used to handle media uploads https://python-pillow.org/
+
+Psycopg2 is used to handle communication between Python and PostgreSQL http://initd.org/psycopg/
+
+## Features
+### existing features
+
+Pobal Studio supports the following features: 
+    1) User authentication system supporting login / logout / register
+    2) CRUD operations for creating, readind, updating & deleting tickets
+    3) A ticket like toggle feature within the full ticket viewport, allowing a user to like or unlike a ticket object
+    4) A view counter to show users how popular a ticket is
+    5) A comment feature allowing user input on any given ticket within the full ticket view. Outside of this view a comment counter is represented by an icon and number count. 
+    6) Access to a profile page, where profile details can be viewed. 
+    7) A search feature, which returns searches by ticket title
+    8) A shopping cart which is accessible across all pages and allows a user to add a ticket to the cart
+    9) A secure payment facility managed by Stripe API 
+
+### features to implement
+The following features would enhance the Pobal Studio experience:
+    1) The ability to respond to user comments, and edit / delete buttons for each individual comment
+    2) Updating user profile details such as change of email address
+    3) A more complex search feature that would allow users to search by date, most viewed or ticket price as well as by ticket title. Further I would implement a smart feature to show results similar to the ticket searched for. This would better account for human error. 
+
+## Testing
+### Manual Testing: 
+Manual testing has been carried out for this project for all features and functionality in line with the following scenario: 
+
+    1) Test that view count increments upon detailed view page load
+        i) navigate to the view all tickets
+        ii) select one ticket by clicking the name of that ticket arriving at the detailed ticket view. Make sure to take note of the view count.
+        iii) exit back via the arrow in top left corner and check that ticket view count has incremented by one
+    2) Test that shopping cart takes payment: 
+        i) append an item to the cart
+        ii) go to cart and checkout 
+        iii) use stripe's card info for tesing purposes
+        iv) see if payment is successful
+        
+### Django Testing & Coverage
+For each app created I have tested the files for forms, models and views with whatever tests I could imagine useful. I'm aware my testing level is basic from viewing and studying many tetsing resources online, many of which I didn't entirely manage to wrap my head around due to the use of different scripting languages etc. From researching I extracted what information I could and developed the tests you see in files name test_view, test_models, test_forms. 
+
+The level of Coverage is currently low, with many test files not being discovered in /htmlcov/index.html. I will look further into this issue. 
+
+### Travis intergrated testing
 [![Build Status](https://travis-ci.org/Nyanca/pobal.svg?branch=master)](https://travis-ci.org/Nyanca/pobal)
 
 # Credits 
-CI / wangwenpei, django-account-helper / https://github.com/codingforentrepreneurs/Django-Likes
+## Thanks
+Special thanks to CI Dublin who provided many great tutorials on the features implemented above, particularly in the github repo; Code-Institute-Solutions/e-commerce, from which I reused and adpated an accounts app, cart and checkout app for the purposes of the Pobal Community. 
+
+Thanks to wangwenpei; https://github.com/wangwenpei/django-account-helper 
+
+Thanks to the guys at Django-Likes; https://github.com/codingforentrepreneurs/Django-Likes, who helped me understand how to build a likes feature
