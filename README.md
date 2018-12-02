@@ -49,6 +49,8 @@ Icons were sourced from. While subscription customers can access slightly slicke
 
 HTML5 is used in conjunction with Jinja http://jinja.pocoo.org/ to create dynamic templates and to prevent repetition of components such as head links, navs and footer.
 
+Charts are included using google-developers handy pre-styled charts https://google-developers.appspot.com/charts
+
 Sass is used for styling. Yeh, I love Sass.. https://sass-lang.com/
 
 Stripe is used to handle payments in a secure way https://stripe.com/ie
@@ -73,6 +75,7 @@ Pobal Studio supports the following features:
     7) A search feature, which returns searches by ticket title
     8) A shopping cart which is accessible across all pages and allows a user to add a ticket to the cart
     9) A secure payment facility managed by Stripe API 
+    10) Charts to visualize work being done by the developers at Pobal
 
 ### features to implement
 The following features would enhance the Pobal Studio experience:

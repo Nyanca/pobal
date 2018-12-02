@@ -25,7 +25,7 @@
 
 </head>
 
-<body class='wrap background-orange'>
+<body class='background-orange'>
     <div class='container-light'>
         <div>
             <!---header--->
@@ -35,57 +35,59 @@
                         <br>{{ user }}</div>
                 </div>
             </header>
-            <!---navigation--->
-            <ul id="slide-out" class="sidenav sitefont background-contrast colourcontrastlight">
-                <li>
-                    <div class="user-view">
-                        {% if user.is_authenticated %}
-                        <a href="#user"><img class="circle" src="{{ userimage }}"></a>
-                        <a href="#name"><span class="white-text name">{{ user }}</span></a>
-                        <a href="#email"><span class="white-text email">{{ email }}</span></a>
-                        <a href="{% url 'logout' %}" class='sitefont colourcontrastlightest'>Log Out</a>
-                    </div>
-                </li>
-                <li><a href="{% url 'home' %}"><i class="fas fa-home"></i></i>Home</a></li>
-                <li>
-                    <div class="divider"></div>
-                </li>
-                <li><a href="{% url 'profile' %}"><i class="fas fa-user-circle"></i>MyProfile</a></li>
-                <li>
-                    <div class="divider"></div>
-                </li>
-                <li><a href="#!"><i class="fas fa-plus-circle"></i>Create Ticket</a></li>
-                <li>
-                    <div class="divider"></div>
-                </li>
-                <li><a href="#!"><i class="fas fa-search"></i>Search Tickets</a></li>
-                <li>
-                    <div class="divider"></div>
-                </li>
-                <li>
-                    <a href="{% url 'view_cart' %}">
+            <main>
+                <!---navigation--->
+                <ul id="slide-out" class="sidenav sitefont background-contrast colourcontrastlight">
+                    <li>
+                        <div class="user-view">
+                            {% if user.is_authenticated %}
+                            <a href="#user"><img class="circle" src="{{ userimage }}"></a>
+                            <a href="#name"><span class="white-text name">{{ user }}</span></a>
+                            <a href="#email"><span class="white-text email">{{ email }}</span></a>
+                            <a href="{% url 'logout' %}" class='sitefont colourcontrastlightest'>Log Out</a>
+                        </div>
+                    </li>
+                    <li><a href="{% url 'home' %}"><i class="fas fa-home"></i></i>Home</a></li>
+                    <li>
+                        <div class="divider"></div>
+                    </li>
+                    <li><a href="{% url 'profile' %}"><i class="fas fa-user-circle"></i>MyProfile</a></li>
+                    <li>
+                        <div class="divider"></div>
+                    </li>
+                    <li><a href="#!"><i class="fas fa-plus-circle"></i>Create Ticket</a></li>
+                    <li>
+                        <div class="divider"></div>
+                    </li>
+                    <li><a href="#!"><i class="fas fa-search"></i>Search Tickets</a></li>
+                    <li>
+                        <div class="divider"></div>
+                    </li>
+                    <li>
+                        <a href="{% url 'view_cart' %}">
                         <i class="fas fa-shopping-cart"></i> Cart
                         {% if product_count > 0 %}
                         <label class="badge badge-warning">{{ product_count }}</label>
                         {% endif %}
                     </a>
-                </li>
-                {% else %}
-                <li><a href="{% url 'register' %}">Register</a></li>
-                <li><a href="{% url 'login' %}">Log In</a></li> {% endif %}
-            </ul>
-            <ul id="slide-out" class="sidenav">
-                <li><a class="sidenav-close" href="#!">Clicking this will close Sidenav</a></li>
-            </ul>
-            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large icon"><i class="fas fa-bars fa-2x"></i></a>
+                    </li>
+                    {% else %}
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="{% url 'login' %}">Log In</a></li> {% endif %}
+                </ul>
+                <ul id="slide-out" class="sidenav">
+                    <li><a class="sidenav-close" href="#!">Clicking this will close Sidenav</a></li>
+                </ul>
+                <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large icon"><i class="fas fa-bars fa-2x"></i></a>
 
-            <!---dashboard body--->
-            {% block content %} {% endblock %}
+                <!---dashboard body--->
+                {% block content %} {% endblock %}
+            </main>
         </div>
     </div>
     <!---footer--->
     <footer>
-        <div class='container sitefont sitecolourlight'><strong>Pobal App 2018&copy</strong>| a project for CI Dublin<i class="fas fa-project-diagram"></i>
+        <div class='page-footer spacer sitefont' style='background-color: #A280B9; color: #CFC8DE;'><strong>Pobal App 2018&copy</strong>| a project for CI Dublin<i class="fas fa-project-diagram"></i>
         </div>
     </footer>
 </body>
