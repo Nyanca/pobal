@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% load static from staticfiles %} {% block content %}
-<div class="row">
+<div class="row container center">
     {% for item in cart_items %}
     <div class="col s12 m12 l12 xl12">
         <div class="row">
@@ -7,7 +7,7 @@
                 <img src="url('{{MEDIA_URL}}{{item.ticket.image}}')"></img>
             </div>
             <div class="col s9 m8 l8 xl8">
-                <h5>{{item.ticket.title}}</h5>
+                <h5 class='sitefont sitecolourlight'>{{item.ticket.title}}</h5>
             </div>
         </div>
         <div class="row">
@@ -15,14 +15,11 @@
                 <form class="form-inline" method="post" action="{% url 'edit_cart' item.id %}">
                     {% csrf_token %}
                     <div class="form-group">
-                        <label for="exampleInputAmount" class="sr-only">New Qty</label>
                         <div class="input-group">
-                            <div class="input-group-addon">Qty</div>
-                            <input name="quantity" type="number" min="0" max="999" class="form-control">
-                            <div class="input-group-addon">{{item.quantity}}</div>
+                            <input name="ticket_id" type="hidden" value='{{ item.id }}'>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Remove Item</button>
                 </form>
             </div>
             {% endfor %}

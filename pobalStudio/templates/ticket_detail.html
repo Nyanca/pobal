@@ -56,7 +56,7 @@
                         <h5 class='sitefont sitecolour1'>{{ ticket.title | title }}</h5>
                         <h6 class='sitefont sitecolour1'>{{ ticket.summary }}</h6>
                     </div>
-                    <div class="col s2 m3 l3 xl3">
+                    <div class="col s12 m3 l3 xl3">
                         <p>{{ ticket.date }}</p>
                         <p>author: {{ ticket.author | title }}</p>
                     </div>
@@ -75,12 +75,10 @@
                     <div class="col s2 m2 l2 xl2 icon-rev">
                         <i class="fas fa-user-circle fa-2x"></i>
                     </div>
-                    <div class="col s8 m8 l8 xl8 sitecolour1tint-bg sitecolourlight" style='border-radius: 10px;'>
+                    <div class="col s9 m9 l9 xl9 sitecolour1tint-bg sitecolourlight" style='border-radius: 10px;'>
                         <div class="row">
-                            <div class="col s1 m1 l1 xl1">
-                                <a href ="{% url 'profile' %}">{{ user | title }}</a>  
-                            </div>
-                            <div class="col s8 m8 l8 xl8">
+                            <div class="col s12 m12 l12 xl12">
+                                <a href="{% url 'profile' %}">{{ user | title }}</a>
                                 <p>{{ comment.comment }}</p>
                             </div>
                         </div>
@@ -104,11 +102,14 @@
                     <div class="col s6 m6 l6 xl6 sitecolourlight">
                         <form method="post" action="{% url 'add_to_cart' ticket.id %}" class='sitecolourlight'>
                             {% csrf_token %}
-                            <div class="input-group">
-                                <input name='quantity' type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                                <span class="input-group-btn">
+                            <div class='row'>
+                                <div class="col s6 m6 l6 xl6">
+                                    <input name='quantity' type="number" min="1" max="1" class="form-control" placeholder="Quantity">
+                                </div>
+                                <div class="col s6 m6 l6 xl6">
+                                    <p class='sitefont sitecolour1'>Add to cart</p>
                                     <button class="btn btn-success" type="submit"><i class="fas fa-shopping-cart"></i></button>
-                                </span>
+                                </div>
                             </div>
                         </form>
                     </div>
