@@ -1,13 +1,39 @@
-{% extends "base.html" %}
-{% load bootstrap_tags %}
-{% block content %}
-    <form method="post" action="{% url 'register' %}" class="box-highlight-colour">
-        <fieldset class="form-group">
-            <legend>Create a new account</legend>
-            <p>Already got an account? <a href="{% url 'login' %}">Sign In</a></p>
-            {% csrf_token %}
-            {{  user_form | as_bootstrap }}
-            <button type="submit" class="btn btn-primary">Create account</button>
-        </fieldset>
-    </form>
+{% extends "base.html" %} {% load bootstrap_tags %} {% block content %}
+
+<div class="row">
+    <div class="col s12 m12 l12 xl12 center">
+        <h3 class='sitefont sitecolourlight'>Create an Account</h3>
+    </div>
+</div>
+<div class="row container sitecolour1 box-highlight-colour">
+    <div class="col s12 m12 l12 xl12">
+        <div class="row center light-padding-top">
+            <div class="col s12 m12 l12 xl12">
+                <i class="fas fa-user-circle fa-5x icon"></i>
+            </div>
+        </div>
+        <div class="row center light-padding-top">
+            <div class="col s12 m12 l12 xl12">
+                <p class='sitefont sitecolour1 font20px'>
+                    Create an account today to become involved with the exciting world of Pobal.
+                </p>
+            </div>
+        </div>
+        <div class="row center">
+            <div class="col s12 m12 l12 xl12">
+                <form method="post" action="{% url 'register' %}">
+                    <fieldset class="form-group">
+                        <legend>Create a new account</legend>
+                        <p>Already got an account? <a href="{% url 'login' %}">Sign In</a></p>
+                        {% csrf_token %} {{ user_form | as_bootstrap }}
+                        <button type="submit" class="button">Create Account</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 {% endblock %}
