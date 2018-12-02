@@ -10,6 +10,10 @@ def pobal_studio(request):
     # a view to render the pobal studio dashboard
     return render(request, 'pobal-studio.html')
 
+def render_chart(request):
+    # a view to render the pobal studio chart file
+    return render(request, 'chart.html')
+    
 def ticket_form(request):
     # a view to render the CreateTicketForm
     ticketForm = CreateTicketForm()

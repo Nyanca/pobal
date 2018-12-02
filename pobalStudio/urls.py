@@ -1,8 +1,9 @@
 from django.conf.urls import url
-from .views import pobal_studio, ticket_form, get_all_tickets, ticket_detail, create_or_edit_ticket, delete_ticket, add_comment, ticket_like_toggle
+from .views import pobal_studio, render_chart, ticket_form, get_all_tickets, ticket_detail, create_or_edit_ticket, delete_ticket, add_comment, ticket_like_toggle
 
 urlpatterns = [
     url(r'^pobal_studio/$', pobal_studio, name='pobal_studio'),
+    url(r'^render_chart/$', render_chart, name='render_chart'),
     url(r'^new/$', create_or_edit_ticket, name='new_ticket'),
     url(r'^ticket_form/$', ticket_form, name='ticket_form'),
     url(r'^tickets/$', get_all_tickets, name='tickets'),
