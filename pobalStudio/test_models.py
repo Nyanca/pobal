@@ -19,10 +19,10 @@ class TestTicketModel(TestCase):
         self.assertRaises({'max_length': 'Ensure this value has at most 100 characters(it has 101). '})
         print('test_summary_max_length_is_100: max char field has been exceeded')
     
-    def test_price_defaults_to_0(self):
+    def test_price_defaults_to_500(self):
         test_ticket = Ticket(title = 'a ticket', summary='a test summary', detail='some detail')
         test_ticket.save()
-        self.assertEqual(test_ticket.price, 0.0)
+        self.assertEqual(test_ticket.price, 500.0)
         
     def test_views_defaults_to_0(self):
         test_ticket = Ticket(title = 'a ticket', summary='a test summary', detail='some detail')
