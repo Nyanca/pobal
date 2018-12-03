@@ -55,25 +55,28 @@
                     <li>
                         <div class="divider"></div>
                     </li>
-                    <li><a href="#!"><i class="fas fa-plus-circle"></i>Create Ticket</a></li>
+                    <li><a href="{% url 'ticket_form' %}"><i class="fas fa-plus-circle"></i>Create Ticket</a></li>
                     <li>
                         <div class="divider"></div>
-                    </li>
-                    <li><a href="#!"><i class="fas fa-search"></i>Search Tickets</a></li>
-                    <li>
-                        <div class="divider"></div>
-                    </li>
-                    <li>
-                        <a href="{% url 'view_cart' %}">
+                        <li><a href="{% url 'tickets' %}"><i class="fas fa-ticket-alt"></i>View Tickets</a></li>
+                        <li>
+                            <div class="divider"></div>
+                        </li>
+                        <li><a href="{% url 'render_chart' %}"><i class="fas fa-chart-pie"></i>View Statistics</a></li>
+                        <li>
+                            <div class="divider"></div>
+                        </li>
+                        <li>
+                            <a href="{% url 'view_cart' %}">
                         <i class="fas fa-shopping-cart"></i> Cart
                         {% if product_count > 0 %}
                         <label class="badge badge-warning">{{ product_count }}</label>
                         {% endif %}
                     </a>
-                    </li>
-                    {% else %}
-                    <li><a href="{% url 'register' %}">Register</a></li>
-                    <li><a href="{% url 'login' %}">Log In</a></li> {% endif %}
+                        </li>
+                        {% else %}
+                        <li><a href="{% url 'register' %}">Register</a></li>
+                        <li><a href="{% url 'login' %}">Log In</a></li> {% endif %}
                 </ul>
                 <ul id="slide-out" class="sidenav">
                     <li><a class="sidenav-close" href="#!">Clicking this will close Sidenav</a></li>

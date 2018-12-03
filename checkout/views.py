@@ -1,9 +1,5 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
-from django.conf import settings
-from django.utils import timezone
-from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.conf import settings
 from django.contrib import messages
 from django.utils import timezone
@@ -62,7 +58,7 @@ def checkout(request):
             if customer.paid:
                 messages.error(request, "You have successfully paid")
                 request.session['cart'] = {}
-                return redirect(reverse('pobal'))
+                return redirect(reverse('home'))
             else:
                 # if payment unsuccessful for reason other than card details not working show this message
                 messages.error(request, "Unable to take payment right now")

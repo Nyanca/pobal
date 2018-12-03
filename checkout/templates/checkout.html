@@ -12,11 +12,9 @@
     {% for item in cart_items %}
     <div class="col s12 m12 l12 xl12">
         <div class="row">
-            <div class="col s3 m4 l4 xl4">
-                <img src="url('{{MEDIA_URL}}{{item.ticket.image}}')"></img>
-            </div>
             <div class="col s9 m8 l8 xl8">
-                <h5>{{item.ticket.title}}</h5>
+                <p class='sitefont sitecolour1'>{{ item.quantity }}</p>
+                <h5 class='sitefont sitecolour1'>{{item.ticket.title}}</h5>
             </div>
         </div>
         {% endfor %}
@@ -36,7 +34,12 @@
                     <div class="form-group col-md-6">
                         {{ payment_form|as_bootstrap }}
                     </div>
-                    <button type="submit" class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit">Pay Now</button>
+                    <div class="row">
+                        <div class="col s12 m6 l6 xl6">
+                            <br>
+                            <button type="submit" class="button" id="submit_payment_btn" name="commit">Pay Now</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

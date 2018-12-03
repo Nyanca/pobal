@@ -1,5 +1,28 @@
 # Pobal Community Web App
 
+## Documentation & Support 
+To get up and running ensure that all dependencies have been installed. See all dependencies for this project in requirements.txt file. 
+
+This project uses python3, so remember to pip3 install when installing django or for other installments:
+
+    pip3 install django==1.11
+
+The name of the application file is manage.py. 
+
+The root project folder is 'pobal'. When adding new urls within applications remember to also add the urls to root folder urls, pobal/urls.py. For example: 
+
+    from django.conf.urls import url, include
+    from app import urls as urls_new_app
+    urlpatterns = [
+        url(r'^app/', include(urls_new_app),
+    ]
+
+Then add the new app to INSTALLED_APPS in pobal/settings.py. For more information on getting set up with Django see https://docs.djangoproject.com/en/2.1/
+
+To view brand styles for Pobal see static/css/. When adding new styles remember to compile the sass files before running the application to see effects taking place: 
+
+    sass static/css/main.scss:static/css/main.css
+
 ## Intro / Summary
 This project has been developed as part of CI Dublin's coding bootcamp for software developers following modules in HTML, CSS, User Centric Frontend Dev, Javascript Fundamentals, Interactive Frontend Dev, Python Fundamentals, Practical Python, Data Centric Dev and Full Stack Frameworks with Django. The brief was to create an issue tracker. 
 
@@ -51,7 +74,7 @@ HTML5 is used in conjunction with Jinja http://jinja.pocoo.org/ to create dynami
 
 Charts are included using google-developers handy pre-styled charts https://google-developers.appspot.com/charts
 
-Sass is used for styling. Yeh, I love Sass.. https://sass-lang.com/
+Sass is used for styling. What can I say.. I love Sass: https://sass-lang.com/
 
 Stripe is used to handle payments in a secure way https://stripe.com/ie
 
@@ -67,7 +90,7 @@ Psycopg2 is used to handle communication between Python and PostgreSQL http://in
 Pobal Studio supports the following features:
 
     1) User authentication system supporting login / logout / register
-    2) CRUD operations for creating, readind, updating & deleting tickets
+    2) CRUD operations for creating, reading, updating & deleting tickets. Editing & Deleting are only extended to the author of a ticket.
     3) A ticket like toggle feature within the full ticket viewport, allowing a user to like or unlike a ticket object
     4) A view counter to show users how popular a ticket is
     5) A comment feature allowing user input on any given ticket within the full ticket view. Outside of this view a comment counter is represented by an icon and number count. 
@@ -83,6 +106,35 @@ The following features would enhance the Pobal Studio experience:
     1) The ability to respond to user comments, and edit / delete buttons for each individual comment
     2) Updating user profile details such as change of email address
     3) A more complex search feature that would allow users to search by date, most viewed or ticket price as well as by ticket title. Further I would implement a smart feature to show results similar to the ticket searched for. This would better account for human error. 
+    4) Add better handling for media images so that unpredictable dimensions can be auto rezised for a uniform look.
+    5) Enhance the comment feature with javascript so that the comment form renders on the ticket detail page: e.g.
+        HTML: 
+        <div class="row sitefont sitecolour1" id='comment_form'>
+            <div class="col s12 m12 l12 xl12">
+                <form method="POST" id='comment_form'>{% csrf_token %} {{ form.as_p }}
+                    <button type="submit" class="save btn btn-default">Publish</button>
+                </form>
+            </div>
+        </div>
+        
+        SCRIPT:
+        {% block head_js %}
+        <script>
+        function myFunction() {
+        var x = document.getElementById("comment_form");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        }
+        else {
+            x.style.display = "none";
+         }
+        }
+        </script>
+        {% endblock head_js %} 
+        
+        Button:
+        <button onclick="myFunction()">New Comment</button>
+        
 
 ## Testing
 ### Manual Testing: 
