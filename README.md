@@ -155,7 +155,7 @@ Manual testing has been carried out for this project for all features and functi
 ### Django Testing with TestCase 
 For each app created I have tested the files for forms, models and views with whatever tests I could imagine useful. I'm aware my testing level is basic from viewing and studying many testing resources online, many of which I didn't entirely manage to wrap my head around due to the use of different scripting languages etc. From researching I extracted what information I could and developed the tests you see in files name test_view, test_models, test_forms. 
 
-Initially the build was failing due to the import env module in settings.py. Because this holds sensitive information it is not uploaded to git which means it is undiscoverable and prevented Travis from passing the build. In deployment, I was able to remove this import and the build passed. 
+Initially the build was failing due to the import env module in settings.py. Because this holds sensitive information it is not uploaded to git which means it is undiscoverable and prevented Travis from passing the build. In deployment, I was able to remove this import and the build passed. However, this also meant that I had to replace the secret key variable in settings with the actual value, whereas before it was defined in env.py.  
 
 For the meantime running the 42 testcases from the command line shows 42 tests passing. 
 
