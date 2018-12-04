@@ -94,8 +94,8 @@ WSGI_APPLICATION = 'pobal.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-if "HEROKU_POSTGRESQL_GREEN_URL" in os.environ:    
-    DATABASES = {'default': dj_database_url.parse(os.environ.get('HEROKU_POSTGRESQL_GREEN_URL'))} 
+if "DATABASES_URL" in os.environ:    
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))} 
      
 else:      
     print("Postgres URL not found, using sqlite instead")     
