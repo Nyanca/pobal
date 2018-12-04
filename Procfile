@@ -1,1 +1,1 @@
-echo web: gunicorn pobal.wsgi:application > Procfile
+web: gunicorn pobal.wsgi:application 
