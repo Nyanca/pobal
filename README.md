@@ -152,17 +152,16 @@ Manual testing has been carried out for this project for all features and functi
     
     ** issue found with second manual test. Stripe is not taking payment. I have looked at head tag order & accuracy, paths to strip.js, alongside checkout views and cart model / form validation. I cannot see the issue after many attempts to fix this.  
         
-### Django Testing & Coverage
+### Django Testing with TestCase 
 For each app created I have tested the files for forms, models and views with whatever tests I could imagine useful. I'm aware my testing level is basic from viewing and studying many testing resources online, many of which I didn't entirely manage to wrap my head around due to the use of different scripting languages etc. From researching I extracted what information I could and developed the tests you see in files name test_view, test_models, test_forms. 
 
-The level of Coverage is currently low, with many test files not being discovered in /htmlcov/index.html. I will look further into this issue. 
-
 For the meantime running the 42 testcases from the command line shows 42 tests passing. 
-## Deployment
-Deployments for this project have been automatic. Heroku is connected to the github repository for this project and each push initiates a heroku build and automatic deploy. 
 
 ### Travis intergrated testing
 [![Build Status](https://travis-ci.org/Nyanca/pobal.svg?branch=master)](https://travis-ci.org/Nyanca/pobal)
+
+## Deployment
+Deployments for this project have been automatic. Heroku is connected to the github repository for this project and each push initiates a heroku build and automatic deploy. 
 
 # Credits 
 ## Thanks
