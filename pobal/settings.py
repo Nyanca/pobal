@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-import env
+from env import STRIPE_PUBLISHABLE, STRIPE_SECRET
 import dj_database_url
 
 # set debug value for the development environment
