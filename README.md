@@ -107,7 +107,8 @@ The following features would enhance the Pobal Studio experience:
     2) Updating user profile details such as change of email address
     3) A more complex search feature that would allow users to search by date, most viewed or ticket price as well as by ticket title. Further I would implement a smart feature to show results similar to the ticket searched for. This would better account for human error. 
     4) Add better handling for media images so that unpredictable dimensions can be auto rezised for a uniform look.
-    5) Enhance the comment feature with javascript so that the comment form renders on the ticket detail page: e.g.
+    5) more user messages & guidance using django messages & tooltips
+    6) Enhance the comment feature with javascript so that the comment form renders on the ticket detail page: e.g.
         HTML: 
         <div class="row sitefont sitecolour1" id='comment_form'>
             <div class="col s12 m12 l12 xl12">
@@ -150,7 +151,8 @@ Manual testing has been carried out for this project for all features and functi
         iii) use stripe's card info for tesing purposes
         iv) see if payment is successful
     
-    ** issue found with second manual test. Stripe is not taking payment. I have looked at head tag order & accuracy, paths to strip.js, alongside checkout views and cart model / form validation. I cannot see the issue after many attempts to fix this.  
+    ** issue found with second manual test. Stripe is not taking payment. I have looked at head tag order & accuracy, paths to strip.js, alongside checkout views and cart model / form validation. I cannot see the issue after many attempts to fix this.
+    ** UPDATE: issue amended. Checkout form was missing id='payment-form'
         
 ### Django Testing with TestCase 
 For each app created I have tested the files for forms, models and views with whatever tests I could imagine useful. I'm aware my testing level is basic from viewing and studying many testing resources online, many of which I didn't entirely manage to wrap my head around due to the use of different scripting languages etc. From researching I extracted what information I could and developed the tests you see in files name test_view, test_models, test_forms. 
@@ -175,9 +177,9 @@ Using these requirements, connect to the postgres DB using new DB url, and migra
 
 # Credits 
 ## Thanks
-Special thanks to CI Dublin who provided many great tutorials on the features implemented above, particularly in the github repo; Code-Institute-Solutions/e-commerce, from which I reused and adpated an accounts app, cart and checkout app for the purposes of the Pobal Community. 
-The error being logged in the console is related to stripe_id. I was informed that headre tags positioning could be the cause of this error, but it seems not. I'm still looking for the bug here...
-
 Thanks to wangwenpei; https://github.com/wangwenpei/django-account-helper 
 
-Thanks to the guys at Django-Likes; https://github.com/codingforentrepreneurs/Django-Likes, who helped me understand how to build a likes feature
+Thanks to the guys at Django-Likes; https://github.com/codingforentrepreneurs/Django-Likes, who helped me understand how to build a likes feature.
+
+Special thanks to CI Dublin who provided many great tutorials on the features implemented above, particularly in the github repo; Code-Institute-Solutions/e-commerce, from which I reused and adpated an accounts app, cart and checkout app for the purposes of the Pobal Community. 
+
