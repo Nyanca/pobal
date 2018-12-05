@@ -3,7 +3,6 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.contrib import messages
 from django.utils import timezone
-from django.contrib.auth.decorators import login_required
 from .forms import PaymentForm, OrderForm
 from .models import OrderLine
 from pobalStudio.models import Ticket
@@ -16,9 +15,6 @@ stripe.api_key = settings.STRIPE_SECRET
 def checkout(request):
 # a view to handle stripe payments
 
-    # get exisiting cart or initialize new cart
-    cart = request.session.get('cart', {})
-    
     if request.method=="POST":
         # get POST data from forms
         order_form = OrderForm(request.POST)
@@ -29,6 +25,9 @@ def checkout(request):
             order = order_form.save(commit=False)
             order.date = timezone.now()
             order.save()
+            
+            # get existing cart or initialize new cart
+            cart = request.session.get('cart', {})
             
             # save purchase data to admin order_line
             total = 0
@@ -41,7 +40,6 @@ def checkout(request):
                     quantity = quantity
                     )
                 order_line_item.save()
-                
             try:
                 # bill customer using stripe api
                 customer = stripe.Charge.create(
@@ -70,5 +68,5 @@ def checkout(request):
         payment_form = PaymentForm()
         order_form = OrderForm()
         
-    return render(request, "checkout.html", {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE, 'cart_items':cart})
+    return render(request, "checkout.html", {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
                 

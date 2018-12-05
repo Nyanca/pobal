@@ -11,7 +11,7 @@
                 <img src='/media/{{item.ticket.image}}' heigth='50%' width='50%'></img>
             </div>
             <div class="col s9 m8 l8 xl8">
-                <h5 class='sitefont sitecolour1'>Ticket Name: {{item.ticket.title}}</h5>
+                <h5 class='sitefont sitecolour1'>Ticket Name: {{item.ticket.title | title }}</h5>
                 <p class='sitefont'>Total Cost:<span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
                 <p class='sitefont'>Quantity: {{item.quantity}}</p>
             </div>

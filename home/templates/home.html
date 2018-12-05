@@ -1,5 +1,11 @@
 {% extends 'base.html' %} {% block content %}
-
+{% if messages %}
+<ul class="messages center sitefont sitecolour1" style='background-color:#90EE90; border-radius:20px; width:20%;'>
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.error }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+</ul>
+{% endif %}
 <div class="row center">
     <div class="col s12 m12 l12 xl12">
         <h2 class='sitefont sitecolourlight'>Pobal</h2>

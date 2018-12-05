@@ -1,26 +1,26 @@
-{% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block head_js %}
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+{% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block head_js %} {{ block.super }}
+<script src="https://js.stripe.com/v2/" type="text/javascript"></script>
 <script type="text/javascript">
     //<![CDATA[
     Stripe.publishableKey = '{{ publishable }}';
     //]]>
 </script>
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
-{% endblock %} {% block content %}
+{% endblock head_js %} {% block content %} 
 <div class="row container box-highlight-colour sitefont">
     {% for item in cart_items %}
     <div class="col s12 m12 l12 xl12">
         <div class="row">
             <div class="col s9 m8 l8 xl8">
-                <p class='sitefont sitecolour1'>{{ item.ticket.quantity }}</p>
-                <h5 class='sitefont sitecolour1'>{{item.ticket.title}}</h5>
+                <h5 class='sitefont sitecolour1'>Ticket: {{item.ticket.title | title }}</h5>
+                <p class='sitefont sitecolour1'>Quantity: {{ item.quantity }}</p>
             </div>
         </div>
         {% endfor %}
         <div class="row">
             <div class="col s12 m12 l12 xl12">
                 <p>Total Cost:<span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
-                <form class="form-inline" method="post" action="{% url 'checkout' %}">
+                <form class="form-inline" role="form" id="payment-form" method="post" action="{% url 'checkout' %}">
                     {% csrf_token %}
                     <legend>Payment Details</legend>
                     <div id="credit-card-errors" style="display:none">
